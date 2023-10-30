@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ListEmail</string>
+    <string name="inbox">Inbox</string>
+    <string name="name_1">Lê Ngọc Đăng Khoa</string>
+    <string name="name_2">Lê Khánh Linh</string>
+    <string name="name_3">Tô Minh Đức</string>
+    <string name="name_4">Đàm Trung Hiếu</string>
+    <string name="name_5">Nguyễn Tuấn Vũ</string>
+    <string name="name_6">Đoàn Trần Minh Hoàng</string>
+    <string name="name_7">Trần Lê Minh</string>
+    <string name="name_8">Doãn Gia Bảo</string>
+    <string name="name_9">Lê Bảo Hà</string>
+    <string name="name_10">Nguyễn Minh Nhật Anh</string>
+    <string name="name_11">Nguyễn Phúc Anh</string>
+    <string name="name_12">Trần Trung Hiếu</string>
+    <string name="name_13">Nguyễn Hoàng</string>
+    <string name="name_14">Trần Minh Quân</string>
+    <string name="name_15">Nguyễn Tùng</string>
+    <string name="name_16">Làu Cam Minh</string>
+
+    <string name="name_17">Lê Hải Quang</string>
+    <string name="name_18">Lê Ngọc Khánh</string>
+    <string name="name_19">Phan Quang Huy</string>
+    <string name="name_20">Võ Trí Hùng</string>
+    <string name="name_21">Dương Thu Ngân</string>
+    <string name="name_22">Đặng Thái An</string>
+    <string name="name_23">Dương Hùng</string>
+    <string name="name_24">Nguyễn Đăng Thành</string>
+    <string name="name_25">Trịnh Chí Bằng</string>
+    <string name="name_26">Ayane Miyuki</string>
+    <string name="name_27">Mett</string>
+    <string name="name_28">Khôi Văn</string>
+</resources>
