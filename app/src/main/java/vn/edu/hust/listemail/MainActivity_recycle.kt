@@ -2,17 +2,18 @@ package vn.edu.hust.listemail
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.widget.ListView
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 
-class MainActivity : AppCompatActivity() {
+class MainActivity_recycle : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_recycle)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle(R.string.inbox)
 
@@ -26,8 +27,15 @@ class MainActivity : AppCompatActivity() {
             Log.v("name",getString(displayname))
             items.add(ItemModel(getString(displayname),"Title $index","Content $index", dateInString, resources.getIdentifier("thumb$index", "drawable", packageName) ))
         }
-        val l = findViewById(R.id.list_view) as ListView
-        l.adapter =  ItemAdapter(items)
+        val adapter = ItemAdapterRecycle(items, object: ItemAdapterRecycle.ItemClickListener{
+            override fun ItemClick(position: Int){
+                Log.v("action", "clicked $position")
+            }
+        })
+
+        val l = findViewById(R.id.recycler_view) as RecyclerView
+        l.layoutManager = LinearLayoutManager(this)
+        l.adapter =  adapter
     }
     fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
         val formatter = SimpleDateFormat(format, locale)
