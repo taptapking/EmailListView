@@ -1,5 +1,6 @@
 package vn.edu.hust.listemail
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -25,17 +26,26 @@ class MainActivity_recycle : AppCompatActivity() {
             val index = it+1
             val displayname : Int = resources.getIdentifier("name_$index", "string", packageName)
             Log.v("name",getString(displayname))
-            items.add(ItemModel(getString(displayname),"Title $index","Content $index", dateInString, resources.getIdentifier("thumb$index", "drawable", packageName) ))
+            items.add(ItemModel(getString(displayname),"Product name $index","Description $index", dateInString, resources.getIdentifier("thumb$index", "drawable", packageName) ))
         }
         val adapter = ItemAdapterRecycle(items, object: ItemAdapterRecycle.ItemClickListener{
             override fun ItemClick(position: Int){
                 Log.v("action", "clicked $position")
+                val intent = Intent(this@MainActivity_recycle, SecondActivity::class.java)
+                intent.putExtra("titledetail",items.get(position).title)
+                intent.putExtra("contentdetail",items.get(position).content)
+                intent.putExtra("timedetail",items.get(position).time)
+                intent.putExtra("index",(position+1).toString())
+                intent.putExtra("senderdetail",items.get(position).name)
+                startActivity(intent);
             }
         })
 
         val l = findViewById(R.id.recycler_view) as RecyclerView
         l.layoutManager = LinearLayoutManager(this)
         l.adapter =  adapter
+
+
     }
     fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
         val formatter = SimpleDateFormat(format, locale)
